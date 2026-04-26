@@ -1,10 +1,10 @@
 version: "3.8"
 
 services:
-  localtunnel:
-    build: .
-    container_name: localtunnel-server
+  frps:
+    image: snowdreamtech/frps:latest
+    container_name: frps
     restart: always
-    ports:
-      - "5005:5005"
-    command: node bin/server.js --port 5005
+    network_mode: host
+    volumes:
+      - ./frps.toml:/etc/frp/frps.toml

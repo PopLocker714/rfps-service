@@ -1,4 +1,7 @@
 bindPort = 7000
 
 vhostHTTPPort = 80
-subDomainHost = "example.com"
+vhostHTTPSPort = 443
+
+auth.method = "token"
+auth.token = "my_secure_token"

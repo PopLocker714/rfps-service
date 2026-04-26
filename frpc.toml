@@ -1,0 +1,12 @@
+serverAddr = "203.31.40.13"
+serverPort = 7000
+
+auth.method = "token"
+auth.token = "my_secure_token"
+
+[[proxies]]
+name = "app1"
+type = "http"
+localIP = "127.0.0.1"
+localPort = 4001
+subdomain = "app1"
