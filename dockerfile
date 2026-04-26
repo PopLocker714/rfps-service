@@ -8,6 +8,5 @@ RUN git clone https://github.com/localtunnel/server.git .
 
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 5005
 
-CMD ["node", "bin/server.js", "--port", "3000"]
