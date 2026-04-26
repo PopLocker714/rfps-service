@@ -1,19 +1,10 @@
-version: "3.9"
+version: "3.8"
 
 services:
-  frps:
-    image: snowdreamtech/frps
-    container_name: frps
+  localtunnel:
+    build: .
+    container_name: localtunnel-server
     restart: always
-    volumes:
-      - ./frps.toml:/etc/frp/
-
     ports:
-      - "7000:7000"
-    networks:
-      - frp_net
-      - dokploy-network
-
-networks:
-  frp_net:
-    driver: bridge
+      - "3000:3000"
+    command: node bin/server.js --port 3000
