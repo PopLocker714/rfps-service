@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  frps:
+    image: snowdreamtech/frps
+    container_name: frps
+    restart: always
+    volumes:
+      - ./frps.toml:/etc/frp/
+
+    ports:
+      - "7000:7000"
+    networks:
+      - frp_net
+      - dokploy-network
+
+networks:
+  frp_net:
+    driver: bridge
